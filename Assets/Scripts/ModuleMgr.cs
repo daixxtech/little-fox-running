@@ -10,9 +10,9 @@ public sealed class ModuleMgr : IModule {
         _moduleList = new List<IModule>();
     }
 
-    public void Awake() {
+    public void Init() {
         foreach (var module in _moduleList) {
-            module.Awake();
+            module.Init();
         }
     }
 

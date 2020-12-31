@@ -2,7 +2,7 @@
     public interface IModule {
         bool NeedUpdate { get; }
 
-        void Awake();
+        void Init();
 
         void Dispose();
 
