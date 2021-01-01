@@ -1,5 +1,6 @@
 ﻿namespace UI {
-    public class UIDef {
+    public static class UIDef {
+        public const string UI_START = "UI_Start";
         public const string UI_MAIN = "UI_Main";
         public const string UI_TIPS = "UI_Tips";
     }
