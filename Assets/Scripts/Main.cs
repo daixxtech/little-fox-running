@@ -1,5 +1,4 @@
-﻿using Config;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Main : MonoBehaviour {
     private ModuleMgr _moduleMgr;
@@ -10,10 +9,6 @@ public class Main : MonoBehaviour {
         _moduleMgr.Init();
         _uiMgr = new UIMgr();
         _uiMgr.Init();
-    }
-
-    private void Start() {
-        var garbageConfList = ConfGarbage.Array;
     }
 
     private void OnDestroy() {

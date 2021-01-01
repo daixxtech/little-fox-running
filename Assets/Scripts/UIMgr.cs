@@ -6,6 +6,7 @@ using UnityEngine;
 public sealed class UIMgr : IModule {
     private Transform _uiRoot;
     private Dictionary<string, GameObject> _uiDict;
+    private object _uiParam;
 
     public bool NeedUpdate { get; } = false;
 
@@ -13,18 +14,26 @@ public sealed class UIMgr : IModule {
         _uiRoot = GameObject.Find("UIRoot").transform;
         _uiDict = new Dictionary<string, GameObject>();
 
+        UIFacade.GetUIParam += GetUIParam;
         UIFacade.ShowUI += ShowUI;
+        UIFacade.ShowUIByParam += ShowUIByParam;
         UIFacade.HideUI += HideUI;
     }
 
     public void Dispose() {
+        UIFacade.GetUIParam -= GetUIParam;
         UIFacade.ShowUI -= ShowUI;
+        UIFacade.ShowUIByParam -= ShowUIByParam;
         UIFacade.HideUI -= HideUI;
     }
 
     public void Update() { }
 
-    public void ShowUI(string uiName) {
+    private object GetUIParam() {
+        return _uiParam;
+    }
+
+    private void ShowUI(string uiName) {
         if (_uiDict.TryGetValue(uiName, out var ui)) {
             ui.gameObject.SetActive(true);
         } else {
@@ -37,7 +46,12 @@ public sealed class UIMgr : IModule {
         }
     }
 
-    public void HideUI(string uiName) {
+    private void ShowUIByParam(string uiName, object param) {
+        _uiParam = param;
+        ShowUI(uiName);
+    }
+
+    private void HideUI(string uiName) {
         if (_uiDict.TryGetValue(uiName, out var ui)) {
             ui.gameObject.SetActive(false);
         } else {
