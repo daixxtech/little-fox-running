@@ -458,8 +458,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 139.99998, y: 0}
-  m_SizeDelta: {x: 280, y: 120}
+  m_AnchoredPosition: {x: 90, y: 0}
+  m_SizeDelta: {x: 300, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &263211188
 MonoBehaviour:
@@ -482,10 +482,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 8
+    m_MinSize: 6
     m_MaxSize: 64
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -493,7 +493,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1234567890
+  m_Text: 01234567
 --- !u!222 &263211189
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -850,6 +850,7 @@ GameObject:
   - component: {fileID: 702296008}
   - component: {fileID: 702296007}
   - component: {fileID: 702296006}
+  - component: {fileID: 702296009}
   m_Layer: 5
   m_Name: UI_Tips
   m_TagString: Untagged
@@ -940,6 +941,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &702296009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702296004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4897e2176677448a84dc6b1fe443187c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &735732483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,8 +1480,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140.00002, y: 0}
-  m_SizeDelta: {x: 280, y: 120}
+  m_AnchoredPosition: {x: -150, y: 0}
+  m_SizeDelta: {x: 220, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1298897038
 MonoBehaviour:
@@ -1599,7 +1612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1445556215}
   m_Layer: 5
-  m_Name: Tiltle
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
