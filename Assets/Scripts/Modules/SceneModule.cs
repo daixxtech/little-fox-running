@@ -50,7 +50,6 @@ namespace Modules {
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-            Debug.Log($"OnSceneLoaded, Scene: {scene.name}, Mode: {mode.ToString()}");
             _loadedCallbackDict.TryGetValue(scene.name, out var callback);
             callback?.Invoke();
         }
