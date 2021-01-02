@@ -49,7 +49,7 @@ namespace Config {
             }
         }
 
-        public ConfGarbage Get(int id) {
+        public static ConfGarbage Get(int id) {
             if (Dict == null) {
                 Dict = ConfUtil.LoadConf<ConfGarbage>();
             }

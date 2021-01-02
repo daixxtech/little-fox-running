@@ -30,7 +30,7 @@ namespace Config {
             }
         }
 
-        public ConfLoadingTips Get(int id) {
+        public static ConfLoadingTips Get(int id) {
             if (Dict == null) {
                 Dict = ConfUtil.LoadConf<ConfLoadingTips>();
             }
