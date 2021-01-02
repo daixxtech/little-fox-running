@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Facade;
 using Modules;
+using Modules.Base;
 using UnityEngine;
 
 public sealed class UIMgr : IModule {
@@ -12,6 +13,7 @@ public sealed class UIMgr : IModule {
 
     public void Init() {
         _uiRoot = GameObject.Find("UIRoot").transform;
+        Object.DontDestroyOnLoad(_uiRoot);
         _uiDict = new Dictionary<string, GameObject>();
 
         UIFacade.GetUIParam += GetUIParam;
@@ -30,7 +32,9 @@ public sealed class UIMgr : IModule {
     public void Update() { }
 
     private object GetUIParam() {
-        return _uiParam;
+        object param = _uiParam;
+        _uiParam = null;
+        return param;
     }
 
     private void ShowUI(string uiName) {

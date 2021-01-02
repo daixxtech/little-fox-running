@@ -12,7 +12,7 @@ namespace UI.Main {
             int count = healthRootTrans.childCount;
             _heartImgs = new Image[count];
             for (int i = 0; i < count; i++) {
-                _heartImgs[i] = transform.GetChild(i).GetComponent<Image>();
+                _heartImgs[i] = healthRootTrans.GetChild(i).GetComponent<Image>();
             }
             _scoreTxt = transform.Find("Scoreboard/ScoreTxt").GetComponent<Text>();
         }
