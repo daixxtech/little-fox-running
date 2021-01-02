@@ -1,4 +1,6 @@
-﻿using Modules;
+﻿using Facade;
+using Modules;
+using UI;
 using UnityEngine;
 
 public class Main : MonoBehaviour {
@@ -16,6 +18,10 @@ public class Main : MonoBehaviour {
 
         _uiMgr = new UIMgr();
         _uiMgr.Init();
+
+        SceneFacade.AddSceneLoadedCallback?.Invoke("Start", () => UIFacade.ShowUI?.Invoke(UIDef.UI_START));
+        SceneFacade.AddSceneLoadedCallback?.Invoke("Level_01", () => UIFacade.ShowUI?.Invoke(UIDef.UI_MAIN));
+        SceneFacade.LoadScene?.Invoke("Scenes/Start");
     }
 
     private void OnDestroy() {
