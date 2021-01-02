@@ -1,23 +1,40 @@
 ﻿using Config;
+using Facade;
 using UnityEngine;
 
 namespace Modules.Scenes {
     public class Player : MonoBehaviour {
-        public EGarbage GarbageBin { get; private set; }
+        [SerializeField] private EGarbage _garbageBin;
+
+        private void Awake() {
+            PlayerFacade.GetGarbageBin += GetGarbageBin;
+        }
+
+        private void OnDestroy() {
+            PlayerFacade.GetGarbageBin -= GetGarbageBin;
+        }
 
         private void Update() {
+            EGarbage pre = _garbageBin;
             if (Input.GetKeyDown(KeyCode.H)) {
-                GarbageBin = EGarbage.Kitchen;
+                _garbageBin = EGarbage.Kitchen;
             }
             if (Input.GetKeyDown(KeyCode.J)) {
-                GarbageBin = EGarbage.Recyclable;
+                _garbageBin = EGarbage.Recyclable;
             }
             if (Input.GetKeyDown(KeyCode.K)) {
-                GarbageBin = EGarbage.Harmful;
+                _garbageBin = EGarbage.Harmful;
             }
             if (Input.GetKeyDown(KeyCode.L)) {
-                GarbageBin = EGarbage.Residual;
+                _garbageBin = EGarbage.Residual;
             }
+            if (_garbageBin != pre) {
+                PlayerFacade.OnGarbageBinChanged?.Invoke(_garbageBin);
+            }
+        }
+
+        private EGarbage GetGarbageBin() {
+            return _garbageBin;
         }
     }
 }

@@ -17,8 +17,7 @@ namespace Modules.Scenes {
                 return;
             }
 
-            Player player = other.GetComponent<Player>();
-            if (player.GarbageBin == Conf.Category) {
+            if (PlayerFacade.GetGarbageBin?.Invoke() == Conf.Category) {
                 ScoreFacade.AddScore?.Invoke(Conf.Score);
             } else {
                 HealthFacade.MinusHealth?.Invoke(1);

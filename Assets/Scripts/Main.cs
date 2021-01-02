@@ -13,6 +13,7 @@ public class Main : MonoBehaviour {
         _moduleMgr.AddModule(new HealthModule());
         _moduleMgr.AddModule(new ScoreModule());
         _moduleMgr.Init();
+
         _uiMgr = new UIMgr();
         _uiMgr.Init();
     }
