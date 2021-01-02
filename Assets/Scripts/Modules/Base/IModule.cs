@@ -1,4 +1,4 @@
-﻿namespace Modules {
+﻿namespace Modules.Base {
     public interface IModule {
         bool NeedUpdate { get; }
 

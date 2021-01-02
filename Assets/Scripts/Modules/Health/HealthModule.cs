@@ -1,4 +1,5 @@
 ﻿using Facade;
+using Modules.Base;
 
 namespace Modules.Health {
     public class HealthModule : IModule {

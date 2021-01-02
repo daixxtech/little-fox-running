@@ -1,4 +1,5 @@
 ﻿using Facade;
+using Modules.Base;
 
 namespace Modules.Score {
     public class ScoreModule : IModule {
