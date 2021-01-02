@@ -30,7 +30,7 @@ namespace UI {
         }
 
         private void OnCloseBtnClicked() {
-            UIFacade.HideUI?.Invoke(UIDef.UI_TIPS);
+            UIFacade.HideUI?.Invoke(UIDef.TIPS);
         }
     }
 }

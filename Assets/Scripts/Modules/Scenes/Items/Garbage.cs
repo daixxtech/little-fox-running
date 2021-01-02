@@ -21,7 +21,7 @@ namespace Modules.Scenes {
                 ScoreFacade.AddScore?.Invoke(Conf.Score);
             } else {
                 HealthFacade.MinusHealth?.Invoke(1);
-                UIFacade.ShowUIByParam?.Invoke(UIDef.UI_TIPS, Conf);
+                UIFacade.ShowUIByParam?.Invoke(UIDef.TIPS, Conf);
             }
         }
     }

@@ -7,10 +7,12 @@ namespace Modules.Scenes {
         [SerializeField] private EGarbage _garbageBin;
 
         private void Awake() {
+            PlayerFacade.GetPosition += GetPosition;
             PlayerFacade.GetGarbageBin += GetGarbageBin;
         }
 
         private void OnDestroy() {
+            PlayerFacade.GetPosition -= GetPosition;
             PlayerFacade.GetGarbageBin -= GetGarbageBin;
         }
 
@@ -31,6 +33,10 @@ namespace Modules.Scenes {
             if (_garbageBin != pre) {
                 PlayerFacade.OnGarbageBinChanged?.Invoke(_garbageBin);
             }
+        }
+
+        private Vector3 GetPosition() {
+            return transform.position;
         }
 
         private EGarbage GetGarbageBin() {

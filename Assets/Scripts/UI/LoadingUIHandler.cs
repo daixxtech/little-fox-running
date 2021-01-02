@@ -52,7 +52,6 @@ namespace UI {
                 yield return CoroutineUtil.END_OF_FRAME;
             }
             operation.allowSceneActivation = true;
-            UIFacade.HideUI?.Invoke(UIDef.UI_LOADING);
         }
     }
 }
