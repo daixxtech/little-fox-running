@@ -5,7 +5,7 @@ using UnityEditor;
 namespace Utils {
     public static class ConfUtil {
         public static Dictionary<int, T> LoadConf<T>() where T : UnityEngine.Object, IConfig {
-            string[] guids = AssetDatabase.FindAssets("t: ConfGarbage");
+            string[] guids = AssetDatabase.FindAssets($"t: {typeof(T).Name}");
             int count = guids.Length;
             var dict = new Dictionary<int, T>(count);
             for (int i = 0; i < count; i++) {
