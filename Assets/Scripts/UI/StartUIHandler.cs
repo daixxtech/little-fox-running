@@ -18,7 +18,7 @@ namespace UI {
 
         private void OnStartBtnClicked() {
             UIFacade.HideUI?.Invoke(UIDef.UI_START);
-            SceneFacade.LoadSceneAsync?.Invoke("Scenes/Level_01", (operation => { UIFacade.ShowUI?.Invoke(UIDef.UI_MAIN); }));
+            SceneFacade.LoadSceneAsync?.Invoke("Scenes/Level_01");
         }
 
         private void OnIntroduceBtnClicked() {

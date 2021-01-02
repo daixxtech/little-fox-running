@@ -2,6 +2,7 @@
 using Config;
 using Facade;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Utils;
 
@@ -22,16 +23,18 @@ namespace UI {
                 _tipsTxt.text = tips[randomIndex].Content;
             }
 
-            AsyncOperation operation = UIFacade.GetUIParam?.Invoke() as AsyncOperation;
-            if (operation == null) {
+            string sceneName = UIFacade.GetUIParam?.Invoke() as string;
+            if (string.IsNullOrEmpty(sceneName)) {
                 return;
             }
-            StartCoroutine(UpdateProgress(operation));
+            StartCoroutine(LoadSceneAsyncAndRefreshProgress(sceneName));
         }
 
-        private IEnumerator UpdateProgress(AsyncOperation operation) {
+        private IEnumerator LoadSceneAsyncAndRefreshProgress(string sceneName) {
             int curValue, targetValue;
             _progressBarImg.fillAmount = curValue = 0;
+            yield return null; // Bug(Unity): allowSceneActivation 不生效，需在异步加载场景之前等待一小段时间
+            AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
             operation.allowSceneActivation = false;
             // 进度条平滑加载至当前异步操作的进度值
             while (operation.progress < 0.9F) {

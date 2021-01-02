@@ -1,8 +1,6 @@
-﻿using System;
-using Facade;
+﻿using Facade;
 using Modules.Base;
 using UI;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Modules {
@@ -19,11 +17,9 @@ namespace Modules {
 
         public void Update() { }
 
-        private void LoadSceneAsync(string sceneName, Action<AsyncOperation> completedCallback) {
+        private void LoadSceneAsync(string sceneName) {
             SceneManager.LoadScene("Scenes/Loading");
-            AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-            operation.completed += completedCallback;
-            UIFacade.ShowUIByParam?.Invoke(UIDef.UI_LOADING, operation);
+            UIFacade.ShowUIByParam?.Invoke(UIDef.UI_LOADING, sceneName);
         }
     }
 }
