@@ -3,7 +3,7 @@ using Facade;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.Tips {
+namespace UI {
     public class TipsUIHandler : MonoBehaviour {
         [SerializeField] private Image _iconImg;
         [SerializeField] private Text _nameTxt;

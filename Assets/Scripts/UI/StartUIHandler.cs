@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.Start {
+namespace UI {
     public class StartUIHandler : MonoBehaviour {
         [SerializeField] private Transform _introducePanel;
 

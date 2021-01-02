@@ -1,6 +1,4 @@
-﻿using Modules.Health;
-using Modules.Scenes;
-using Modules.Score;
+﻿using Modules;
 using UnityEngine;
 
 public class Main : MonoBehaviour {

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.Main {
+namespace UI {
     public class MainUIHandler : MonoBehaviour {
         [SerializeField] private Image[] _heartImgs;
         [SerializeField] private Text _scoreTxt;

@@ -5,7 +5,7 @@ using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Modules.Scenes {
+namespace Modules {
     public class SceneModule : IModule {
         public bool NeedUpdate { get; } = false;
 

@@ -1,7 +1,7 @@
 ﻿using Facade;
 using Modules.Base;
 
-namespace Modules.Score {
+namespace Modules {
     public class ScoreModule : IModule {
         private int _score;
         public bool NeedUpdate { get; } = false;

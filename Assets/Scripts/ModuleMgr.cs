@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Modules;
 using Modules.Base;
 
 public sealed class ModuleMgr : IModule {

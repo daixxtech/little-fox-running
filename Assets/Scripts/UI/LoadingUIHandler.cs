@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Utils;
 
-namespace UI.Loading {
+namespace UI {
     public class LoadingUIHandler : MonoBehaviour {
         [SerializeField] private Text _tipsTxt;
         [SerializeField] private Image _progressBarImg;

@@ -1,7 +1,7 @@
 ﻿using Facade;
 using Modules.Base;
 
-namespace Modules.Health {
+namespace Modules {
     public class HealthModule : IModule {
         private int _health;
         public bool NeedUpdate { get; } = false;
