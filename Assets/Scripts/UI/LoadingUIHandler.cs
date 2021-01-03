@@ -31,7 +31,7 @@ namespace UI {
         }
 
         private IEnumerator LoadSceneAsyncAndRefreshProgress(string sceneName) {
-            int curValue, targetValue;
+            float curValue, targetValue;
             _progressBarImg.fillAmount = curValue = 0;
             yield return null; // Bug(Unity): allowSceneActivation 不生效，需在异步加载场景之前等待一小段时间
             AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
@@ -40,7 +40,7 @@ namespace UI {
             while (operation.progress < 0.9F) {
                 targetValue = (int) (operation.progress * 100);
                 while (curValue < targetValue) {
-                    _progressBarImg.fillAmount = ++curValue / 100.0F;
+                    _progressBarImg.fillAmount = (curValue += 0.5F) / 100.0F;
                     yield return CoroutineUtil.END_OF_FRAME;
                 }
                 yield return CoroutineUtil.END_OF_FRAME;
@@ -48,9 +48,10 @@ namespace UI {
             // 当异步加载至 90% 时，平滑加载剩余 10%
             targetValue = 100;
             while (curValue < targetValue) {
-                _progressBarImg.fillAmount = ++curValue / 100.0F;
+                _progressBarImg.fillAmount = (curValue += 0.5F) / 100.0F;
                 yield return CoroutineUtil.END_OF_FRAME;
             }
+            yield return new WaitForSeconds(0.5F);
             operation.allowSceneActivation = true;
         }
     }

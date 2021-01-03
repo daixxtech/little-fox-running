@@ -13,7 +13,7 @@ namespace Modules.Scenes.Cameras {
         private void LateUpdate() {
             Vector3 playerPos = PlayerFacade.GetPosition?.Invoke() ?? Vector3.zero;
             Vector3 cameraPos = transform.position;
-            transform.position = new Vector3(playerPos.x, playerPos.y, cameraPos.z);
+            transform.position = new Vector3(playerPos.x, Mathf.Clamp(playerPos.y, -1.49F, 4.49F), cameraPos.z);
         }
     }
 }
