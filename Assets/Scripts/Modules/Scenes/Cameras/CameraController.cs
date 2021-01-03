@@ -6,7 +6,7 @@ namespace Modules.Scenes {
     public class CameraController : MonoBehaviour {
         private void Update() {
             if (Input.GetButton("Cancel")) {
-                UIFacade.ShowUI(UIDef.PAUSE);
+                UIFacade.ShowUI?.Invoke(UIDef.PAUSE);
             }
         }
 

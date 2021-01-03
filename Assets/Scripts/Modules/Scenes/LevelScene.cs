@@ -10,6 +10,7 @@ namespace Modules.Scenes {
         [SerializeField] private Garbage[] _garbageArray;
         [SerializeField] private AnimationOnce _rightBinEffect;
         [SerializeField] private AnimationOnce _wrongBinEffect;
+        [SerializeField] private int _destroyedGarbageCount;
 
         private void Awake() {
             _player = transform.Find("Player/Character").gameObject.AddComponent<Player>();
@@ -65,6 +66,10 @@ namespace Modules.Scenes {
             } else {
                 Time.timeScale = 0;
                 ShowGarbageTriggerEffect(false, garbage.transform.position, () => { UIFacade.ShowUIByParam?.Invoke(UIDef.TIPS, garbage.Conf); });
+            }
+            ++_destroyedGarbageCount;
+            if (_destroyedGarbageCount >= _garbageArray.Length) {
+                UIFacade.ShowUI?.Invoke(UIDef.ACCOMPLISHED);
             }
         }
     }
