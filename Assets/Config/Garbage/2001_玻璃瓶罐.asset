@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee020235f8534bd2a91419c0a0406aee, type: 3}
-  m_Name: "\u74DC\u679C\u76AE\u6838"
+  m_Name: "2001_\u73BB\u7483\u74F6\u7F50"
   m_EditorClassIdentifier: 
-  _id: 1000
-  _category: 0
-  _name: "\u74DC\u679C\u76AE\u6838"
-  _icon: {fileID: 21300000, guid: cc9b241ae029e0043a4063c19c0b5081, type: 3}
-  _description: "\u74DC\u679C\u76AE\u6838\u5C5E\u4E8E\u53A8\u4F59\u5783\u573E\u3002"
-  _score: 100
+  _id: 2001
+  _category: 1
+  _name: "\u73BB\u7483\u74F6\u7F50"
+  _icon: {fileID: 0}
+  _description: "\u53EF\u56DE\u6536\u5783\u573E\uFF0C\u73BB\u7483\u5236\u54C1\u5927\u90FD\u53EF\u4EE5\u56DE\u6536\u5904\u7406"
+  _score: 150
