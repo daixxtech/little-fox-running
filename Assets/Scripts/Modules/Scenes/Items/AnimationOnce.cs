@@ -16,6 +16,7 @@ namespace Modules.Scenes {
             if (info.normalizedTime >= 1.0F) {
                 gameObject.SetActive(false);
                 animationOver?.Invoke();
+                animationOver = null;
             }
         }
     }
