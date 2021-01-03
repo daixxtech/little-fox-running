@@ -7,16 +7,23 @@ using UnityEngine.UI;
 namespace UI {
     public class MainUIHandler : MonoBehaviour {
         [SerializeField] private Image[] _heartImgs;
+        [SerializeField] private Sprite[] _heartSprites;
         [SerializeField] private Image _garbageBinImg;
         [SerializeField] private Text _scoreTxt;
 
         private void Awake() {
             Transform heartCtnr = transform.Find("Health/HeartContainer");
-            int count = heartCtnr.childCount;
+            GameObject template = heartCtnr.Find("Template").gameObject;
+            int count = HealthFacade.GetHealthMax?.Invoke() ?? 0;
             _heartImgs = new Image[count];
             for (int i = 0; i < count; i++) {
-                _heartImgs[i] = heartCtnr.GetChild(i).GetComponent<Image>();
+                _heartImgs[i] = Instantiate(template, heartCtnr).GetComponent<Image>();
             }
+            template.SetActive(false);
+            _heartSprites = new Sprite[2];
+            _heartSprites[0] = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Textures/UI/心.png");
+            _heartSprites[1] = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Textures/UI/空心.png");
+
             _garbageBinImg = transform.Find("GarbageBin/GarbageBinImg").GetComponent<Image>();
             _scoreTxt = transform.Find("Scoreboard/ScoreTxt").GetComponent<Text>();
         }
@@ -45,10 +52,10 @@ namespace UI {
             int count = _heartImgs.Length;
             int i = 0;
             while (i < value) {
-                _heartImgs[i++].sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Textures/UI/心.png");
+                _heartImgs[i++].sprite = _heartSprites[0];
             }
             while (i < count) {
-                _heartImgs[i++].sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Textures/UI/空心.png");
+                _heartImgs[i++].sprite = _heartSprites[1];
             }
         }
 

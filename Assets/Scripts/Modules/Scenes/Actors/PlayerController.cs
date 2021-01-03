@@ -35,7 +35,7 @@ namespace Modules.Scenes {
             // 读取 X 轴的输出
             xInput = Input.GetAxis("Horizontal");
             // 是否按下跳跃键
-            if (Input.GetButtonDown("Jump")) {
+            if (Time.timeScale != 0 && Input.GetButtonDown("Jump")) {
                 isJumpPressed = true;
             }
         }

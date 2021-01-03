@@ -13,7 +13,7 @@ public class Main : MonoBehaviour {
 
         _moduleMgr = new ModuleMgr();
         _moduleMgr.AddModule(new SceneModule());
-        _moduleMgr.AddModule(new HealthModule());
+        _moduleMgr.AddModule(new HealthModule(5));
         _moduleMgr.AddModule(new ScoreModule());
         _moduleMgr.Init();
 
