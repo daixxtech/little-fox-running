@@ -14,7 +14,7 @@ namespace Modules.Scenes {
         ///<summary> 动画控制器 </summary>
         public Animator animator;
 
-        private void Start() {
+        private void Awake() {
             controller = GetComponent<CharacterController2D>();
             animator = GetComponent<Animator>();
         }

@@ -2,7 +2,6 @@
 using Config;
 using Facade;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Modules.Scenes {
     public class LevelScene : MonoBehaviour {
@@ -24,7 +23,7 @@ namespace Modules.Scenes {
             }
             for (int i = 0; i < count; i++) {
                 Garbage garbage = garbageRootTrans.GetChild(i).gameObject.AddComponent<Garbage>();
-                int randomIndex = Random.Range(0, confLength);
+                int randomIndex = UnityEngine.Random.Range(0, confLength);
                 garbage.Conf = confList[randomIndex];
                 _garbageArray[i] = garbage;
             }

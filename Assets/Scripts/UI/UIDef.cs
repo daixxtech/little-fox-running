@@ -5,5 +5,6 @@
         public const string MAIN = "UI_Main";
         public const string TIPS = "UI_Tips";
         public const string PAUSE = "UI_Pause";
+        public const string FAILED = "UI_Failed";
     }
 }

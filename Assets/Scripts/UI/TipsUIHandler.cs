@@ -33,6 +33,9 @@ namespace UI {
 
         private void OnDisable() {
             Time.timeScale = 1;
+            if ((HealthFacade.GetHealth?.Invoke() ?? 0) <= 0) {
+                UIFacade.ShowUI.Invoke(UIDef.FAILED);
+            }
         }
 
         private void OnCloseBtnClicked() {

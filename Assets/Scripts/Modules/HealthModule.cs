@@ -1,5 +1,7 @@
 ﻿using Facade;
 using Modules.Base;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Modules {
     public class HealthModule : IModule {
@@ -14,13 +16,17 @@ namespace Modules {
         public void Init() {
             HealthFacade.GetHealthMax += GetHealthMax;
             HealthFacade.GetHealth += GetHealth;
-            HealthFacade.MinusHealth += MinusHealth;
+            HealthFacade.AddHealth += AddHealth;
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
         public void Dispose() {
             HealthFacade.GetHealthMax -= GetHealthMax;
             HealthFacade.GetHealth -= GetHealth;
-            HealthFacade.MinusHealth -= MinusHealth;
+            HealthFacade.AddHealth -= AddHealth;
+
+            SceneManager.sceneLoaded -= OnSceneLoaded;
         }
 
         public void Update() { }
@@ -33,9 +39,15 @@ namespace Modules {
             return _health;
         }
 
-        private void MinusHealth(int value) {
-            _health -= value;
+        private void AddHealth(int value) {
+            _health = Mathf.Clamp(_health + value, 0, _healthMax);
             HealthFacade.OnHealthUpdated?.Invoke(_health);
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+            if (scene.name.StartsWith("Level")) {
+                AddHealth(_healthMax);
+            }
         }
     }
 }

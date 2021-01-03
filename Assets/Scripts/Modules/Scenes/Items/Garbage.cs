@@ -1,7 +1,6 @@
 ﻿using Config;
 using Facade;
 using UI;
-using UnityEditor;
 using UnityEngine;
 
 namespace Modules.Scenes {
@@ -33,8 +32,11 @@ namespace Modules.Scenes {
                 ScoreFacade.AddScore?.Invoke(Conf.Score);
                 SceneFacade.ShowGarbageTriggerEffect?.Invoke(true, transform.position, null);
             } else {
-                HealthFacade.MinusHealth?.Invoke(1);
-                SceneFacade.ShowGarbageTriggerEffect?.Invoke(false, transform.position, () => { UIFacade.ShowUIByParam?.Invoke(UIDef.TIPS, Conf); });
+                HealthFacade.AddHealth?.Invoke(-1);
+                Time.timeScale = 0;
+                SceneFacade.ShowGarbageTriggerEffect?.Invoke(false, transform.position, () => {
+                    UIFacade.ShowUIByParam?.Invoke(UIDef.TIPS, Conf);
+                });
             }
             Destroy(gameObject);
         }
