@@ -35,6 +35,8 @@ namespace UI {
             Time.timeScale = 1;
             if ((HealthFacade.GetHealth?.Invoke() ?? 0) <= 0) {
                 UIFacade.ShowUI.Invoke(UIDef.FAILED);
+            }else if (SceneFacade.IsAllGarbageCollected?.Invoke() ?? false) {
+                UIFacade.ShowUI?.Invoke(UIDef.ACCOMPLISHED);
             }
         }
 

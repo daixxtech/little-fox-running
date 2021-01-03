@@ -40,10 +40,12 @@ namespace Modules.Scenes {
             UIFacade.HideUIAll?.Invoke();
             UIFacade.ShowUI?.Invoke(UIDef.LEVEL_MAIN);
 
+            SceneFacade.IsAllGarbageCollected += IsAllGarbageCollected;
             SceneFacade.OnGarbageDestroy += OnGarbageDestroy;
         }
 
         private void OnDestroy() {
+            SceneFacade.IsAllGarbageCollected -= IsAllGarbageCollected;
             SceneFacade.OnGarbageDestroy -= OnGarbageDestroy;
 
             if (Camera.main != null) {
@@ -60,16 +62,21 @@ namespace Modules.Scenes {
             }
         }
 
+        private bool IsAllGarbageCollected() {
+            return _destroyedGarbageCount >= _garbageArray.Length;
+        }
+
         private void OnGarbageDestroy(Garbage garbage, bool value) {
+            ++_destroyedGarbageCount;
             if (value) {
-                ShowGarbageTriggerEffect(true, garbage.transform.position, null);
+                if (IsAllGarbageCollected()) {
+                    ShowGarbageTriggerEffect(true, garbage.transform.position, () => UIFacade.ShowUI?.Invoke(UIDef.ACCOMPLISHED));
+                } else {
+                    ShowGarbageTriggerEffect(true, garbage.transform.position, null);
+                }
             } else {
                 Time.timeScale = 0;
                 ShowGarbageTriggerEffect(false, garbage.transform.position, () => { UIFacade.ShowUIByParam?.Invoke(UIDef.TIPS, garbage.Conf); });
-            }
-            ++_destroyedGarbageCount;
-            if (_destroyedGarbageCount >= _garbageArray.Length) {
-                UIFacade.ShowUI?.Invoke(UIDef.ACCOMPLISHED);
             }
         }
     }
