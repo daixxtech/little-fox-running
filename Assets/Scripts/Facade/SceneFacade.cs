@@ -1,4 +1,5 @@
 ﻿using System;
+using Modules.Scenes;
 using UnityEngine;
 
 namespace Facade {
@@ -9,6 +10,6 @@ namespace Facade {
         public static Action<string, Action> RemoveUnloadedCallback;
         public static Action<string> LoadScene;
         public static Action<string> LoadSceneAsync;
-        public static Action<bool, Vector3, Action> ShowGarbageTriggerEffect;
+        public static Action<Garbage, bool> OnGarbageDestroy;
     }
 }

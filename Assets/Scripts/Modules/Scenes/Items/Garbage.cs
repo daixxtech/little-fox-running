@@ -30,13 +30,10 @@ namespace Modules.Scenes {
             _hasTriggered = true;
             if (PlayerFacade.GetGarbageBin?.Invoke() == Conf.Category) {
                 ScoreFacade.AddScore?.Invoke(Conf.Score);
-                SceneFacade.ShowGarbageTriggerEffect?.Invoke(true, transform.position, null);
+                SceneFacade.OnGarbageDestroy?.Invoke(this, true);
             } else {
                 HealthFacade.AddHealth?.Invoke(-1);
-                Time.timeScale = 0;
-                SceneFacade.ShowGarbageTriggerEffect?.Invoke(false, transform.position, () => {
-                    UIFacade.ShowUIByParam?.Invoke(UIDef.TIPS, Conf);
-                });
+                SceneFacade.OnGarbageDestroy?.Invoke(this, false);
             }
             Destroy(gameObject);
         }

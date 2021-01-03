@@ -1,6 +1,7 @@
 ﻿using System;
 using Config;
 using Facade;
+using UI;
 using UnityEngine;
 
 namespace Modules.Scenes {
@@ -31,11 +32,11 @@ namespace Modules.Scenes {
             _rightBinEffect = transform.Find("Effects/RightBin").GetComponent<AnimationOnce>();
             _wrongBinEffect = transform.Find("Effects/WrongBin").GetComponent<AnimationOnce>();
 
-            SceneFacade.ShowGarbageTriggerEffect += ShowGarbageTriggerEffect;
+            SceneFacade.OnGarbageDestroy += OnGarbageDestroy;
         }
 
         private void OnDestroy() {
-            SceneFacade.ShowGarbageTriggerEffect -= ShowGarbageTriggerEffect;
+            SceneFacade.OnGarbageDestroy -= OnGarbageDestroy;
         }
 
         private void ShowGarbageTriggerEffect(bool value, Vector3 position, Action animOverCallback) {
@@ -44,6 +45,15 @@ namespace Modules.Scenes {
             effect.transform.position = position;
             if (animOverCallback != null) {
                 effect.animationOver += animOverCallback;
+            }
+        }
+
+        private void OnGarbageDestroy(Garbage garbage, bool value) {
+            if (value) {
+                ShowGarbageTriggerEffect(true, garbage.transform.position, null);
+            } else {
+                Time.timeScale = 0;
+                ShowGarbageTriggerEffect(false, garbage.transform.position, () => { UIFacade.ShowUIByParam?.Invoke(UIDef.TIPS, garbage.Conf); });
             }
         }
     }
