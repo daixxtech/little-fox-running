@@ -15,6 +15,6 @@ MonoBehaviour:
   _id: 1001
   _category: 0
   _name: "\u8336\u53F6\u6E23"
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 400d42d0796dff148ab541e86170ffa9, type: 3}
   _description: "\u53A8\u4F59\u5783\u573E\uFF0C\u8336\u53F6\u6E23\u4F7F\u7528\u5B8C\u6210\u4EE5\u540E\u6613\u53D8\u8D28"
   _score: 100
