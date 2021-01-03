@@ -1,28 +1,42 @@
 ﻿using Config;
 using Facade;
 using UI;
+using UnityEditor;
 using UnityEngine;
 
 namespace Modules.Scenes {
+    [RequireComponent(typeof(SpriteRenderer))]
     public class Garbage : MonoBehaviour {
-        public Animator animator;
-        public ConfGarbage Conf { get; set; }
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private ConfGarbage _conf;
+        [SerializeField] private bool _hasTriggered;
 
-        private void Awake() {
-            animator = GetComponent<Animator>();
+        public ConfGarbage Conf {
+            get => _conf;
+            set {
+                _conf = value;
+                _spriteRenderer.sprite = _conf.Icon;
+            }
         }
 
-        private void OnTriggerEnter(Collider other) {
-            if (!"Player".Equals(other.tag)) {
+        private void Awake() {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        private void OnTriggerEnter2D(Collider2D other) {
+            if (_hasTriggered || !"Player".Equals(other.tag)) {
                 return;
             }
 
+            _hasTriggered = true;
             if (PlayerFacade.GetGarbageBin?.Invoke() == Conf.Category) {
                 ScoreFacade.AddScore?.Invoke(Conf.Score);
+                SceneFacade.ShowGarbageTriggerEffect?.Invoke(true, transform.position, null);
             } else {
                 HealthFacade.MinusHealth?.Invoke(1);
-                UIFacade.ShowUIByParam?.Invoke(UIDef.TIPS, Conf);
+                SceneFacade.ShowGarbageTriggerEffect?.Invoke(false, transform.position, () => { UIFacade.ShowUIByParam?.Invoke(UIDef.TIPS, Conf); });
             }
+            Destroy(gameObject);
         }
     }
 }

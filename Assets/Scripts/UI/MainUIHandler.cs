@@ -1,5 +1,6 @@
 ﻿using Config;
 using Facade;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,11 +43,12 @@ namespace UI {
 
         private void OnHealthUpdated(int value) {
             int count = _heartImgs.Length;
-            for (int i = 0; i < value; i++) {
-                _heartImgs[i].color = Color.red;
+            int i = 0;
+            while (i < value) {
+                _heartImgs[i++].sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Textures/UI/心.png");
             }
-            for (int i = 0; i < count; i++) {
-                _heartImgs[i].color = Color.grey;
+            while (i < count) {
+                _heartImgs[i++].sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Textures/UI/空心.png");
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using Config;
+﻿using System;
+using Config;
 using Facade;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,14 +20,19 @@ namespace UI {
         }
 
         private void OnEnable() {
+            Time.timeScale = 0;
+
             ConfGarbage conf = UIFacade.GetUIParam?.Invoke() as ConfGarbage;
             if (conf == null) {
                 return;
             }
-
             _iconImg.sprite = conf.Icon;
             _nameTxt.text = conf.Name;
             _descTxt.text = conf.Description;
+        }
+
+        private void OnDisable() {
+            Time.timeScale = 1;
         }
 
         private void OnCloseBtnClicked() {

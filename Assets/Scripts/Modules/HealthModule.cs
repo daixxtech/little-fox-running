@@ -3,7 +3,7 @@ using Modules.Base;
 
 namespace Modules {
     public class HealthModule : IModule {
-        private int _health;
+        private int _health = 5;
         public bool NeedUpdate { get; } = false;
 
         public void Init() {
