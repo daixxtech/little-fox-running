@@ -32,11 +32,22 @@ namespace Modules.Scenes {
             _rightBinEffect = transform.Find("Effects/RightBin").GetComponent<AnimationOnce>();
             _wrongBinEffect = transform.Find("Effects/WrongBin").GetComponent<AnimationOnce>();
 
+            if (Camera.main != null) {
+                Camera.main.gameObject.AddComponent<CameraController>();
+            }
+
+            UIFacade.HideUIAll?.Invoke();
+            UIFacade.ShowUI?.Invoke(UIDef.LEVEL_MAIN);
+
             SceneFacade.OnGarbageDestroy += OnGarbageDestroy;
         }
 
         private void OnDestroy() {
             SceneFacade.OnGarbageDestroy -= OnGarbageDestroy;
+
+            if (Camera.main != null) {
+                Destroy(Camera.main.gameObject.GetComponent<CameraController>());
+            }
         }
 
         private void ShowGarbageTriggerEffect(bool value, Vector3 position, Action animOverCallback) {

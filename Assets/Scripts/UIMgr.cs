@@ -19,6 +19,7 @@ public sealed class UIMgr : IModule {
         UIFacade.ShowUI += ShowUI;
         UIFacade.ShowUIByParam += ShowUIByParam;
         UIFacade.HideUI += HideUI;
+        UIFacade.HideUIAll += HideUIAll;
     }
 
     public void Dispose() {
@@ -26,6 +27,7 @@ public sealed class UIMgr : IModule {
         UIFacade.ShowUI -= ShowUI;
         UIFacade.ShowUIByParam -= ShowUIByParam;
         UIFacade.HideUI -= HideUI;
+        UIFacade.HideUIAll -= HideUIAll;
     }
 
     public void Update() { }
@@ -37,7 +39,7 @@ public sealed class UIMgr : IModule {
     }
 
     private void ShowUI(string uiName) {
-        if (_uiDict.TryGetValue(uiName, out var ui)) {
+        if (_uiDict.TryGetValue(uiName, out GameObject ui)) {
             ui.gameObject.SetActive(true);
         } else {
             ui = _uiRoot.Find(uiName)?.gameObject;
@@ -55,7 +57,7 @@ public sealed class UIMgr : IModule {
     }
 
     private void HideUI(string uiName) {
-        if (_uiDict.TryGetValue(uiName, out var ui)) {
+        if (_uiDict.TryGetValue(uiName, out GameObject ui)) {
             ui.gameObject.SetActive(false);
         } else {
             ui = _uiRoot.Find(uiName)?.gameObject;
@@ -64,6 +66,12 @@ public sealed class UIMgr : IModule {
             }
             _uiDict.Add(uiName, ui);
             ui.SetActive(false);
+        }
+    }
+
+    private void HideUIAll() {
+        foreach (var pair in _uiDict) {
+            pair.Value.SetActive(false);
         }
     }
 }

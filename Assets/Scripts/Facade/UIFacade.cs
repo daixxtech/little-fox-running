@@ -6,5 +6,6 @@ namespace Facade {
         public static Action<string> ShowUI;
         public static Action<string, object> ShowUIByParam;
         public static Action<string> HideUI;
+        public static Action HideUIAll;
     }
 }
