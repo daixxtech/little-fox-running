@@ -15,6 +15,6 @@ MonoBehaviour:
   _id: 3002
   _category: 2
   _name: "\u5E9F\u6C34\u94F6\u6E29\u5EA6\u8BA1"
-  _icon: {fileID: 21300000, guid: 417b4b06ace85d04a8bd97cfc52ea9fd, type: 3}
+  _icon: {fileID: 0}
   _description: "\u6709\u5BB3\u5783\u573E\uFF0C\u5E9F\u5F03\u7684\u6C34\u94F6\u6E29\u5EA6\u8BA1\u5BB9\u6613\u4EA7\u751F\u6CC4\u9732\uFF0C\u5176\u5185\u7684\u6C34\u94F6\u4F1A\u5BF9\u4EBA\u4F53\u548C\u73AF\u5883\u4EA7\u751F\u5F88\u5927\u7684\u5371\u5BB3\r\n"
   _score: 200
