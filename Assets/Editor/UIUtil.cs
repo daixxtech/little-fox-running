@@ -6,7 +6,7 @@ namespace Editor {
     public static class UIUtil {
         private static readonly StringBuilder BUILDER = new StringBuilder();
 
-        [MenuItem("Tools/CopyUITransformPath %#X")]
+        [MenuItem("Tools/Copy UI Transform Path %#X")]
         public static void CopyUITransformPath() {
             Transform cur = Selection.activeTransform;
             if (cur == null) {

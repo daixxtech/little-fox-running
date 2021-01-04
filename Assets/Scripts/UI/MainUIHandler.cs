@@ -1,6 +1,5 @@
 ﻿using Config;
 using Facade;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,8 +20,11 @@ namespace UI {
             }
             template.SetActive(false);
             _heartSprites = new Sprite[2];
-            _heartSprites[0] = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Textures/UI/心.png");
-            _heartSprites[1] = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Textures/UI/空心.png");
+            AssetBundle assetBundle = AssetBundleFacade.LoadAssetBundle?.Invoke("texture.bundle");
+            if (!(assetBundle is null)) {
+                _heartSprites[0] = assetBundle.LoadAsset<Sprite>("心.png");
+                _heartSprites[1] = assetBundle.LoadAsset<Sprite>("空心.png");
+            }
 
             _garbageBinImg = transform.Find("GarbageBin/GarbageBinImg").GetComponent<Image>();
             _scoreTxt = transform.Find("Scoreboard/ScoreTxt").GetComponent<Text>();
