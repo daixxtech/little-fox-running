@@ -54,7 +54,7 @@
                 fixed4 mainCol = tex2D(_MainTex, i.uv.xy);
                 fixed4 detailCol = tex2D(_SecondTex, i.uv.zw);
                 fixed4 col = lerp(mainCol, detailCol, detailCol.a);
-                return mainCol;
+                return col;
             }
             ENDCG
 
