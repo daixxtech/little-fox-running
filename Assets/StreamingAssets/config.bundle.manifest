@@ -3,7 +3,7 @@ CRC: 1327634014
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b55cb833c5fd0293e8750babb9bb5492
+    Hash: d87dc0b2b77561b0440cc12ed10b6d5e
   TypeTreeHash:
     serializedVersion: 2
     Hash: c5e78821869774ed07fb57c7065c6446
@@ -55,4 +55,4 @@ Assets:
 - "Assets/Config/Garbage/1005_\u7389\u7C73\u6838.asset"
 - "Assets/Config/Garbage/4001_\u5927\u9AA8\u5934.asset"
 Dependencies:
-- C:/workspace/code/projects/university_major-practice/Assets/StreamingAssets/texture.bundle
+- D:/workspace/code/projects/university_major-practice/Assets/StreamingAssets/texture.bundle

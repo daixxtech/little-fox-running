@@ -104,7 +104,7 @@ namespace Modules.Scenes {
             /* 将 start ~ end 均分为多段，对之间的每个点进行检测 */
             Vector3 cur = groundCheckPointStart.position;
             Vector3 end = groundCheckPointEnd.position;
-            float step = (end.x - cur.x) / GROUND_CHECK_SAMPLE_RATE; // 分段的步长
+            float step = (end.x - cur.x) / (GROUND_CHECK_SAMPLE_RATE - 1); // 分段的步长
             _preIsGrounded = _isGrounded; // 更新上次检测时是否落地
             _isGrounded = false; // 初始化当前落地状态为 false
             for (int i = 0; i < GROUND_CHECK_SAMPLE_RATE; i++) {
