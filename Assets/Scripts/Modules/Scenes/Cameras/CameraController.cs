@@ -13,7 +13,7 @@ namespace Modules.Scenes {
         private void LateUpdate() {
             Vector3 playerPos = PlayerFacade.GetPosition?.Invoke() ?? Vector3.zero;
             Vector3 cameraPos = transform.position;
-            transform.position = new Vector3(playerPos.x, Mathf.Clamp(playerPos.y, -2.99F, 4.49F), cameraPos.z);
+            transform.position = new Vector3(playerPos.x, Mathf.Clamp(playerPos.y, -2.49F, 4.49F), cameraPos.z);
         }
 
         private void OnDestroy() {
