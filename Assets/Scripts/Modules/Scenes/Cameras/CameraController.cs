@@ -13,7 +13,9 @@ namespace Modules.Scenes {
         private void LateUpdate() {
             Vector3 playerPos = PlayerFacade.GetPosition?.Invoke() ?? Vector3.zero;
             Vector3 cameraPos = transform.position;
-            transform.position = new Vector3(playerPos.x, Mathf.Clamp(playerPos.y, -2.49F, 4.49F), cameraPos.z);
+            float xClamp = Mathf.Clamp(playerPos.x, -68.88F, 68.88F);
+            float yClamp = Mathf.Clamp(playerPos.y, -2.49F, 4.49F);
+            transform.position = new Vector3(xClamp, yClamp, cameraPos.z);
         }
 
         private void OnDestroy() {
