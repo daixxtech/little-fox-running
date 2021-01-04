@@ -5,7 +5,7 @@ namespace Modules.Scenes {
     [RequireComponent(typeof(Rigidbody2D))]
     public class CharacterController2D : MonoBehaviour {
         ///<summary> 落地检测半径 </summary>
-        private const float GROUND_CHECK_RADIUS = 0.05F;
+        private const float GROUND_CHECK_RADIUS = 0.10F;
         ///<summary> 落地检测频率（频率越高，落地检测越准确） </summary>
         private const int GROUND_CHECK_SAMPLE_RATE = 5;
         ///<summary> 平滑时间参数（用于 SmoothDamp 函数） </summary>

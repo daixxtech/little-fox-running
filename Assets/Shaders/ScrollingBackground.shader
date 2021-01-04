@@ -4,8 +4,8 @@
     {
         _MainTex ("Main Texture", 2D) = "white" { }
         _SecondTex ("Second Texture", 2D) = "white" { }
-        _MainSpeed ("Main Speed", Range(0.01, 1)) = 1
-        _SecondSpeed ("Second Speed", Range(0.01, 1)) = 1
+        _MainSpeed ("Main Speed", Range(0, 1)) = 1
+        _SecondSpeed ("Second Speed", Range(0, 1)) = 1
     }
     SubShader
     {
