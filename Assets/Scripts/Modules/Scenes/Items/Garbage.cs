@@ -1,6 +1,5 @@
 ﻿using Config;
 using Facade;
-using UI;
 using UnityEngine;
 using UnityEngine.UI;
 

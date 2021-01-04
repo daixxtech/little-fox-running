@@ -1,6 +1,5 @@
 ﻿using Facade;
 using Modules;
-using UI;
 using UnityEngine;
 
 public class Main : MonoBehaviour {

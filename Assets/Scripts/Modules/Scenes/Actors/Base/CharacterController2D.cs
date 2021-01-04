@@ -40,6 +40,7 @@ namespace Modules.Scenes {
         ///<summary> 地面层级 </summary>
         public LayerMask groundLayer;
 
+
         #region 对外接口
 
         /// <summary> 是否落地 </summary>
@@ -75,6 +76,7 @@ namespace Modules.Scenes {
         }
 
         #endregion
+
 
         private void Start() {
             rig2D = GetComponent<Rigidbody2D>();

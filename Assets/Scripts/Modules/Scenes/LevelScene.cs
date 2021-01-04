@@ -4,7 +4,6 @@ using Facade;
 using UI;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.WSA;
 
 namespace Modules.Scenes {
     public class LevelScene : MonoBehaviour {
@@ -15,7 +14,7 @@ namespace Modules.Scenes {
         [SerializeField] private int _destroyedGarbageCount;
 
         private void Awake() {
-            transform.Find("AirBarrier/Tilemap").GetComponent<Tilemap>().color=Color.clear;
+            transform.Find("AirBarrier/Tilemap").GetComponent<Tilemap>().color = Color.clear;
 
             _player = transform.Find("Player/Character").gameObject.AddComponent<Player>();
 
