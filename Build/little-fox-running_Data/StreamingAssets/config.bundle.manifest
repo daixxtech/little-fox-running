@@ -1,0 +1,58 @@
+ManifestFileVersion: 0
+CRC: 1327634014
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d87dc0b2b77561b0440cc12ed10b6d5e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c5e78821869774ed07fb57c7065c6446
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 855176b3d48d41efa6fad25684a40fbb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ee020235f8534bd2a91419c0a0406aee, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d83724375753427d8e22c1f1cbe3f4a8, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Config/GarbageBin/0_Kitchen.asset
+- "Assets/Config/Garbage/2001_\u73BB\u7483\u74F6\u7F50.asset"
+- "Assets/Config/Garbage/3003_\u8FC7\u671F\u836F\u54C1.asset"
+- "Assets/Config/Garbage/2000_\u62A5\u7EB8.asset"
+- "Assets/Config/Garbage/1003_\u74DC\u679C\u76AE\u6838.asset"
+- "Assets/Config/Garbage/3001_\u5E9F\u65E5\u706F\u7BA1.asset"
+- Assets/Config/LoadingTips/7.asset
+- "Assets/Config/Garbage/1000_\u83DC\u5E2E\u53F6\u5E2E.asset"
+- "Assets/Config/Garbage/1001_\u8336\u53F6\u6E23.asset"
+- Assets/Config/LoadingTips/8.asset
+- Assets/Config/LoadingTips/9.asset
+- Assets/Config/LoadingTips/1.asset
+- "Assets/Config/Garbage/1004_\u5269\u83DC\u5269\u996D.asset"
+- Assets/Config/GarbageBin/2_Harmful.asset
+- "Assets/Config/Garbage/1002_\u86CB\u58F3.asset"
+- Assets/Config/LoadingTips/5.asset
+- Assets/Config/LoadingTips/3.asset
+- Assets/Config/LoadingTips/6.asset
+- Assets/Config/LoadingTips/4.asset
+- "Assets/Config/Garbage/4003_\u98DF\u54C1\u888B.asset"
+- "Assets/Config/Garbage/2002_\u5E03\u5A03\u5A03.asset"
+- "Assets/Config/Garbage/4000_\u4FDD\u9C9C\u819C.asset"
+- "Assets/Config/Garbage/3004_\u6CB9\u6F06\u6876.asset"
+- "Assets/Config/Garbage/3000_\u5E9F\u7535\u6C60.asset"
+- Assets/Config/LoadingTips/0.asset
+- "Assets/Config/Garbage/2004_\u6613\u62C9\u7F50.asset"
+- "Assets/Config/Garbage/3002_\u5E9F\u6C34\u94F6\u6E29\u5EA6\u8BA1.asset"
+- Assets/Config/GarbageBin/1_Recyclable.asset
+- "Assets/Config/Garbage/4002_\u7070\u571F.asset"
+- "Assets/Config/Garbage/2003_\u5851\u6599\u996E\u6599\u74F6.asset"
+- Assets/Config/GarbageBin/3_Residual.asset
+- Assets/Config/LoadingTips/2.asset
+- "Assets/Config/Garbage/1005_\u7389\u7C73\u6838.asset"
+- "Assets/Config/Garbage/4001_\u5927\u9AA8\u5934.asset"
+Dependencies:
+- D:/workspace/code/projects/university_major-practice/Assets/StreamingAssets/texture.bundle
