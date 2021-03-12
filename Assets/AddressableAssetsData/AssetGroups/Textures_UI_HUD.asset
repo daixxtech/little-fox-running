@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Textures_UI_HUD
+  m_EditorClassIdentifier: 
+  m_GroupName: Textures_UI_HUD
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 543e69d4a41b706459be8702f3288f0c
+  m_SerializeEntries:
+  - m_GUID: 872c2ced0a0018b46b28e74a92b358a5
+    m_Address: tex_ui_hud_heart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7523a113f73f66d4e8acc86448205168
+    m_Address: tex_ui_hud_heart-empty
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 04cf08ef23980614d9fb14547ba86ced, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d048d6807204a434f8aa545260a360c1, type: 2}
+    - {fileID: 11400000, guid: 99fede0f62c96c04b9d06c8c518aaacf, type: 2}

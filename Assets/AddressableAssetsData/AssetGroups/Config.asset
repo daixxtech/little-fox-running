@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Config
+  m_EditorClassIdentifier: 
+  m_GroupName: Config
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5858d947170d33d4b8f2977e8f38c870
+  m_SerializeEntries:
+  - m_GUID: 3506c6edc353a1647ba2c968b64acfe8
+    m_Address: ConfGarbage
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4900000, guid: 3506c6edc353a1647ba2c968b64acfe8, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 3506c6edc353a1647ba2c968b64acfe8, type: 3}
+  - m_GUID: 0f96655f7c247ba429466ec1c1990687
+    m_Address: ConfGarbageBin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4900000, guid: 0f96655f7c247ba429466ec1c1990687, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 0f96655f7c247ba429466ec1c1990687, type: 3}
+  - m_GUID: 34245b87c84343043943539574860476
+    m_Address: ConfGarbageDef
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4900000, guid: 34245b87c84343043943539574860476, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 34245b87c84343043943539574860476, type: 3}
+  - m_GUID: 6f192d2b28c46c143846aacc30cee7cd
+    m_Address: ConfLoadingTips
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4900000, guid: 6f192d2b28c46c143846aacc30cee7cd, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 6f192d2b28c46c143846aacc30cee7cd, type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 04cf08ef23980614d9fb14547ba86ced, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f8df2f76bf78aea4fb930e944ab9c92c, type: 2}
+    - {fileID: 11400000, guid: f9e9f268790c7314685d97a85ec61f1e, type: 2}

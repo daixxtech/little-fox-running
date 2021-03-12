@@ -1,6 +1,7 @@
 ﻿using Config;
 using Facade;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 namespace Modules.Scenes {
@@ -11,13 +12,12 @@ namespace Modules.Scenes {
         [SerializeField] private bool _hasTriggered;
         [SerializeField] private Text _nameTxt;
 
-        public ConfGarbage Conf {
-            get => _conf;
-            set {
-                _conf = value;
-                _nameTxt.text = _conf.Name;
-                _spriteRenderer.sprite = _conf.Icon;
-            }
+        public ConfGarbage Conf => _conf;
+
+        public async void SetData(ConfGarbage conf) {
+            _conf = conf;
+            _nameTxt.text = _conf.name;
+            _spriteRenderer.sprite = await Addressables.LoadAssetAsync<Sprite>(_conf.icon).Task;
         }
 
         private void Awake() {
@@ -31,8 +31,8 @@ namespace Modules.Scenes {
             }
 
             _hasTriggered = true;
-            if (PlayerFacade.GetGarbageBin?.Invoke() == Conf.Category) {
-                ScoreFacade.AddScore?.Invoke(Conf.Score);
+            if (PlayerFacade.GetGarbageBin?.Invoke() == (EGarbageDef) Conf.category) {
+                ScoreFacade.AddScore?.Invoke(Conf.score);
                 SceneFacade.OnGarbageDestroy?.Invoke(this, true);
             } else {
                 HealthFacade.AddHealth?.Invoke(-1);

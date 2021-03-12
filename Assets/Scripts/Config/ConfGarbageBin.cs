@@ -1,58 +1,40 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿/* Auto generated code */
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Utils;
 
 namespace Config {
-    [CreateAssetMenu(fileName = "GarbageBin", menuName = "GameConfig/GarbageBin")]
-    public class ConfGarbageBin : ScriptableObject, IConfig {
-        private static Dictionary<int, ConfGarbageBin> Dict;
-        private static ConfGarbageBin[] CacheArray;
-        private static Dictionary<int, ConfGarbageBin> CategoryDict;
-        [SerializeField] private int _id;
-        [SerializeField] private EGarbage _category;
-        [SerializeField] private Sprite _icon;
+    /// <summary> Generate From Garbage.xlsx </summary>
+    public class ConfGarbageBin {
+        /// <summary> ID </summary>
+        public readonly int id;
+        /// <summary> 名称 </summary>
+        public readonly string name;
+        /// <summary> 类别 </summary>
+        public readonly int category;
+        /// <summary> 图标 </summary>
+        public readonly string icon;
 
-        public int ID => _id;
-        public EGarbage Category => _category;
-        public Sprite Icon => _icon;
-
-        public static ConfGarbageBin[] Array {
-            get {
-                if (CacheArray != null) {
-                    return CacheArray;
-                }
-                if (Dict == null) {
-                    Dict = ConfUtil.LoadConf<ConfGarbageBin>();
-                }
-                CacheArray = new ConfGarbageBin[Dict.Count];
-                int index = -1;
-                foreach (var pair in Dict) {
-                    CacheArray[++index] = pair.Value;
-                }
-                return CacheArray;
-            }
+        public ConfGarbageBin(int id, string name, int category, string icon) {
+            this.id = id;
+            this.name = name;
+            this.category = category;
+            this.icon = icon;
         }
 
-        public static ConfGarbageBin Get(int id) {
-            if (Dict == null) {
-                Dict = ConfUtil.LoadConf<ConfGarbageBin>();
-            }
-            Dict.TryGetValue(id, out var conf);
-            return conf;
+        private static Dictionary<int, ConfGarbageBin> _Dict;
+        private static ConfGarbageBin[] _Array;
+
+        public static async Task<ConfGarbageBin> Get(int id) {
+            return (_Dict ?? (_Dict = await ConfUtil.LoadFromJSON<ConfGarbageBin>())).TryGetValue(id, out var conf) ? conf : null;
         }
 
-        public static ConfGarbageBin GetByCategory(EGarbage category) {
-            if (CategoryDict == null) {
-                if (Dict == null) {
-                    Dict = ConfUtil.LoadConf<ConfGarbageBin>();
-                }
-                CategoryDict = new Dictionary<int, ConfGarbageBin>(Dict.Count);
-                foreach (var pair in Dict) {
-                    CategoryDict.Add((int) pair.Value._category, pair.Value);
-                }
-            }
-            CategoryDict.TryGetValue((int) category, out var conf);
-            return conf;
+        public static async Task<ConfGarbageBin[]> GetArray() {
+            return _Array ?? (_Array = (_Dict ?? (_Dict = await ConfUtil.LoadFromJSON<ConfGarbageBin>())).Values.ToArray());
         }
     }
 }
+
+/* End of auto generated code */

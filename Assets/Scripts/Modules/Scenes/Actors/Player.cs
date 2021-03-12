@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Modules.Scenes {
     public class Player : MonoBehaviour {
-        [SerializeField] private EGarbage _garbageBin;
+        [SerializeField] private EGarbageDef _garbageBin = EGarbageDef.Kitchen;
 
         private void Awake() {
             PlayerFacade.GetPosition += GetPosition;
@@ -17,18 +17,18 @@ namespace Modules.Scenes {
         }
 
         private void Update() {
-            EGarbage pre = _garbageBin;
+            EGarbageDef pre = _garbageBin;
             if (Input.GetKeyDown(KeyCode.H)) {
-                _garbageBin = EGarbage.Kitchen;
+                _garbageBin = EGarbageDef.Kitchen;
             }
             if (Input.GetKeyDown(KeyCode.J)) {
-                _garbageBin = EGarbage.Recyclable;
+                _garbageBin = EGarbageDef.Recyclable;
             }
             if (Input.GetKeyDown(KeyCode.K)) {
-                _garbageBin = EGarbage.Harmful;
+                _garbageBin = EGarbageDef.Harmful;
             }
             if (Input.GetKeyDown(KeyCode.L)) {
-                _garbageBin = EGarbage.Residual;
+                _garbageBin = EGarbageDef.Residual;
             }
             if (_garbageBin != pre) {
                 PlayerFacade.OnGarbageBinChanged?.Invoke(_garbageBin);
@@ -39,7 +39,7 @@ namespace Modules.Scenes {
             return transform.position;
         }
 
-        private EGarbage GetGarbageBin() {
+        private EGarbageDef GetGarbageBin() {
             return _garbageBin;
         }
     }

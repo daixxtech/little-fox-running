@@ -16,12 +16,16 @@ namespace UI {
             _progressBarImg = transform.Find("ProgressBar/ValueImg").GetComponent<Image>();
         }
 
-        private void OnEnable() {
-            ConfLoadingTips[] tips = ConfLoadingTips.Array;
+        private async void OnEnable() {
+            _tipsTxt.gameObject.SetActive(false);
+            _progressBarImg.gameObject.SetActive(false);
+            ConfLoadingTips[] tips = await ConfLoadingTips.GetArray();
             if (tips.Length != 0) {
                 int randomIndex = Random.Range(0, tips.Length);
-                _tipsTxt.text = tips[randomIndex].Content;
+                _tipsTxt.text = tips[randomIndex].content;
             }
+            _tipsTxt.gameObject.SetActive(true);
+            _progressBarImg.gameObject.SetActive(true);
 
             string sceneName = UIFacade.GetUIParam?.Invoke() as string;
             if (string.IsNullOrEmpty(sceneName)) {

@@ -1,6 +1,7 @@
 ﻿using Config;
 using Facade;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 namespace UI {
@@ -25,9 +26,9 @@ namespace UI {
             if (conf == null) {
                 return;
             }
-            _iconImg.sprite = conf.Icon;
-            _nameTxt.text = conf.Name;
-            _descTxt.text = conf.Description;
+            _iconImg.sprite = Addressables.LoadAssetAsync<Sprite>(conf.icon).Result;
+            _nameTxt.text = conf.name;
+            _descTxt.text = conf.description;
         }
 
         private void OnDisable() {

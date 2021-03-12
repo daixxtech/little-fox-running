@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Textures_UI_Background
+  m_EditorClassIdentifier: 
+  m_GroupName: Textures_UI_Background
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0226c08f0bf7918429ebc35ea93fe9ca
+  m_SerializeEntries:
+  - m_GUID: 9482185ebfe2e9045997bc3752e27595
+    m_Address: tex_ui_bg_button
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d6d3bcd649546c54e83ff2cc0c8de038
+    m_Address: tex_ui_bg_dialog
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 28a0123925c6ca24fb1aed87d318949a
+    m_Address: tex_ui_bg_intro
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3e94b8e77332ec74c9676f9445dcfe96
+    m_Address: tex_ui_bg_loading
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 04cf08ef23980614d9fb14547ba86ced, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 54da45c6ea93b094fb5af8fe737ed7f5, type: 2}
+    - {fileID: 11400000, guid: bf075421d1ba1fa4ea531f891e163f4a, type: 2}

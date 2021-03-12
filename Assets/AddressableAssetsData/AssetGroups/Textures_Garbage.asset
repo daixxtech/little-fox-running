@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Textures_Garbage
+  m_EditorClassIdentifier: 
+  m_GroupName: Textures_Garbage
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e910bc2dd5a49164ea52f6ae7cd27af5
+  m_SerializeEntries:
+  - m_GUID: 1f4d97c1ceb55804e91020f54236315a
+    m_Address: "tex_garbage_\u4FDD\u9C9C\u819C"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: febbd9fff95156e4592f978e0538a143
+    m_Address: "tex_garbage_\u5269\u83DC\u5269\u996D"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b423027d4d711bc40b2746b6995988ae
+    m_Address: "tex_garbage_\u5851\u6599\u996E\u6599\u74F6"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1e8fddc103dc9a142bee1de7a40114c1
+    m_Address: "tex_garbage_\u5927\u9AA8\u5934"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f3dc921c1cf6d8b48930c9d82897f51e
+    m_Address: "tex_garbage_\u5E03\u5A03\u5A03"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: f3dc921c1cf6d8b48930c9d82897f51e, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: f3dc921c1cf6d8b48930c9d82897f51e, type: 3}
+  - m_GUID: b5741297dd6f6344ea78c5826ab91787
+    m_Address: "tex_garbage_\u6CB9\u6F06\u6876"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ff24726b8859ba941aef0fb5c45c0534
+    m_Address: "tex_garbage_\u5E9F\u65E5\u706F\u5149\u7BA1"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 61d5489c3423e5a47860661f7b45ee53
+    m_Address: "tex_garbage_\u5E9F\u6C34\u94F6\u6E29\u5EA6\u8BA1"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8eb7e4af9b37d5346bffe9664212cd8a
+    m_Address: "tex_garbage_\u5E9F\u7535\u6C60"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f564e6dbf5f8cf2468ce984604ddb85a
+    m_Address: "tex_garbage_\u62A5\u7EB8"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c2d0a981e55d17b4ebbe1145b93b602c
+    m_Address: "tex_garbage_\u6613\u62C9\u7F50"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: c2d0a981e55d17b4ebbe1145b93b602c, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: c2d0a981e55d17b4ebbe1145b93b602c, type: 3}
+  - m_GUID: b139b23e8d656b4429ab7cd7c4c5ff4c
+    m_Address: "tex_garbage_\u7070\u571F"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d253f177cb7eefd478133956cce37097
+    m_Address: "tex_garbage_\u7389\u7C73\u6838"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ae929b2c3366ba54da195abbff443f6e
+    m_Address: "tex_garbage_\u73BB\u7483\u74F6\u7F50"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: ae929b2c3366ba54da195abbff443f6e, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: ae929b2c3366ba54da195abbff443f6e, type: 3}
+  - m_GUID: cc9b241ae029e0043a4063c19c0b5081
+    m_Address: "tex_garbage_\u74DC\u679C\u76AE\u6838"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: cc9b241ae029e0043a4063c19c0b5081, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: cc9b241ae029e0043a4063c19c0b5081, type: 3}
+  - m_GUID: 400d42d0796dff148ab541e86170ffa9
+    m_Address: "tex_garbage_\u8336\u53F6\u6E23"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 400d42d0796dff148ab541e86170ffa9, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 400d42d0796dff148ab541e86170ffa9, type: 3}
+  - m_GUID: c1898e293060aaf4ea2054777ce08b67
+    m_Address: "tex_garbage_\u83DC\u5E2E\u83DC\u53F6"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b8bf52db67cb50649861ad293269a7c5
+    m_Address: "tex_garbage_\u86CB\u58F3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6f61badb6f7375042b5808a748bd4ce4
+    m_Address: "tex_garbage_\u8FC7\u671F\u836F\u54C1"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 6f61badb6f7375042b5808a748bd4ce4, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 6f61badb6f7375042b5808a748bd4ce4, type: 3}
+  - m_GUID: 033967e8f4bd46e419da2277e509a114
+    m_Address: "tex_garbage_\u98DF\u54C1\u888B"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 033967e8f4bd46e419da2277e509a114, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 033967e8f4bd46e419da2277e509a114, type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 04cf08ef23980614d9fb14547ba86ced, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 5a8704128f603f64d96c041377542693, type: 2}
+    - {fileID: 11400000, guid: 6dbeddcb1bae9de45bdc51b233cd1fa7, type: 2}

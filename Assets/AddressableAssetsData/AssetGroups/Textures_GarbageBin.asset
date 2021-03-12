@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Textures_GarbageBin
+  m_EditorClassIdentifier: 
+  m_GroupName: Textures_GarbageBin
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 29cdbcaf093d6474c987e5736eb67599
+  m_SerializeEntries:
+  - m_GUID: 5a4c39d02e1534e4182199c343412e76
+    m_Address: tex_garbage-bin_harmful
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d9274d11cd3e30146a055dae2bb9e1a9
+    m_Address: tex_garbage-bin_recyclable
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 892ef6687266fc545b9c5c0aab33039d
+    m_Address: tex_garbage-bin_kitchen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 5c0a6ce8203463145afce5ecf3c448a5
+    m_Address: tex_garbage-bin_residual
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 04cf08ef23980614d9fb14547ba86ced, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3509295b7f30ffa40945e40ed3f4bdb2, type: 2}
+    - {fileID: 11400000, guid: a5e598f0d8e7a0d4584db00cf0f71831, type: 2}

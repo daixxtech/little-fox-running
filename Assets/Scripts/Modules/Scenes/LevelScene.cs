@@ -1,6 +1,6 @@
-﻿using System;
-using Config;
+﻿using Config;
 using Facade;
+using System;
 using UI;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -13,7 +13,7 @@ namespace Modules.Scenes {
         [SerializeField] private AnimationOnce _wrongBinEffect;
         [SerializeField] private int _destroyedGarbageCount;
 
-        private void Awake() {
+        private async void Awake() {
             transform.Find("AirBarrier/Tilemap").GetComponent<Tilemap>().color = Color.clear;
 
             _player = transform.Find("Player/Character").gameObject.AddComponent<Player>();
@@ -21,16 +21,15 @@ namespace Modules.Scenes {
             Transform garbageRootTrans = transform.Find("Garbage");
             int count = garbageRootTrans.childCount;
             _garbageArray = new Garbage[count];
-            ConfGarbage[] confList = ConfGarbage.Array;
+            ConfGarbage[] confList = await ConfGarbage.GetArray();
             int confLength = confList.Length;
-            if (confLength == 0) {
-                return;
-            }
-            for (int i = 0; i < count; i++) {
-                Garbage garbage = garbageRootTrans.GetChild(i).gameObject.AddComponent<Garbage>();
-                int randomIndex = UnityEngine.Random.Range(0, confLength);
-                garbage.Conf = confList[randomIndex];
-                _garbageArray[i] = garbage;
+            if (confLength != 0) {
+                for (int i = 0; i < count; i++) {
+                    Garbage garbage = garbageRootTrans.GetChild(i).gameObject.AddComponent<Garbage>();
+                    int randomIndex = UnityEngine.Random.Range(0, confLength);
+                    garbage.SetData(confList[randomIndex]);
+                    _garbageArray[i] = garbage;
+                }
             }
 
             _rightBinEffect = transform.Find("Effects/RightBin").GetComponent<AnimationOnce>();

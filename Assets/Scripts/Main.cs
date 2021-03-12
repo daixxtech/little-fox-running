@@ -9,16 +9,11 @@ public class Main : MonoBehaviour {
         DontDestroyOnLoad(this);
 
         _moduleMgr = new ModuleMgr();
-        _moduleMgr.AddModule(new AssetBundleModule());
         _moduleMgr.AddModule(new UIModule());
         _moduleMgr.AddModule(new SceneModule());
         _moduleMgr.AddModule(new HealthModule(5));
         _moduleMgr.AddModule(new ScoreModule());
         _moduleMgr.Init();
-
-        AssetBundleFacade.LoadAssetBundle?.Invoke("texture.bundle");
-        AssetBundleFacade.LoadAssetBundle?.Invoke("config.bundle");
-
         SceneFacade.LoadScene?.Invoke("Start");
     }
 
